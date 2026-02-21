@@ -269,6 +269,11 @@ useEffect(() => {
 <img src={userData?.assistantImage} alt="" className='h-full object-cover'/>
       </div>
       <h1 className='text-white text-[18px] font-semibold'>I'm {userData?.assistantName}</h1>
+      <div className='text-center mb-[20px]'>
+        <p className='text-gray-300 text-[14px] mb-[10px]'>Try saying:</p>
+        <p className='text-blue-200 text-[12px] italic'>"{userData?.assistantName}, please search dhurandar 2 trailer on youtube"</p>
+        <p className='text-blue-200 text-[12px] italic'>"{userData?.assistantName}, please tell the weather in Gurgaon right now"</p>
+      </div>
       {!aiText && <img src={userImg} alt="" className='w-[200px]'/>}
       {aiText && <img src={aiImg} alt="" className='w-[200px]'/>}
     
