@@ -10,10 +10,10 @@ import geminiResponse from "./gemini.js"
 
 const app=express()
 
-// Update CORS for Vercel deployment
+// Update CORS for Render deployment
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://your-frontend-url.vercel.app"  // Replace with actual frontend URL from Step 2
+  "https://aivirtualassistant-p0bq.onrender.com"
 ]
 
 app.use(cors({
