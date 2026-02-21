@@ -10,11 +10,12 @@ import geminiResponse from "./gemini.js"
 
 const app=express()
 
-// Update CORS for all origins (development)
+// Update CORS for specific frontend domains
 const allowedOrigins = [
   "http://localhost:5173",
   "http://localhost:3000",
   "http://localhost:4173",
+  "https://virtualaiassistantrishit.netlify.app",
   "https://*.netlify.app",
   "https://*.vercel.app"
 ]
