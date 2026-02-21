@@ -13,8 +13,7 @@ const app=express()
 // Update CORS for Vercel deployment
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://ai-virtual-assistant-virid.vercel.app",
-  "https://ai-virtual-assistant-4x4rv24xz-rishits-projects-5a2330a4.vercel.app"
+  "https://your-frontend-url.vercel.app"  // Replace with actual frontend URL
 ]
 
 app.use(cors({
