@@ -26,17 +26,11 @@ app.use(cookieParser())
 app.use("/api/auth",authRouter)
 app.use("/api/user",userRouter)
 
-// For Vercel serverless
+// For Render deployment
 const port = process.env.PORT || 5000
 
-if (process.env.NODE_ENV === 'production') {
-  module.exports = async (req, res) => {
-    await app(req, res)
-  }
-} else {
-  app.listen(port,()=>{
+app.listen(port,()=>{
     connectDb()
     console.log("server started")
-  })
-}
+})
 
