@@ -26,6 +26,18 @@ app.use(cookieParser())
 app.use("/api/auth",authRouter)
 app.use("/api/user",userRouter)
 
+// Root route for health check
+app.get("/", (req, res) => {
+  res.json({ 
+    message: "AI Virtual Assistant API is running!",
+    status: "active",
+    endpoints: {
+      auth: "/api/auth",
+      user: "/api/user"
+    }
+  })
+})
+
 // For Render deployment
 const port = process.env.PORT || 5000
 
