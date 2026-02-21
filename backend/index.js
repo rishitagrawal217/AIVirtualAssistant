@@ -8,21 +8,36 @@ import cookieParser from "cookie-parser"
 import userRouter from "./routes/user.routes.js"
 import geminiResponse from "./gemini.js"
 
-
 const app=express()
+
+// Update CORS for Vercel deployment
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://ai-virtual-assistant-virid.vercel.app",
+  "https://ai-virtual-assistant-4x4rv24xz-rishits-projects-5a2330a4.vercel.app"
+]
+
 app.use(cors({
-    origin:"http://localhost:5173",
-    credentials:true
+    origin: allowedOrigins,
+    credentials: true
 }))
-const port=process.env.PORT || 5000
+
 app.use(express.json())
 app.use(cookieParser())
 app.use("/api/auth",authRouter)
 app.use("/api/user",userRouter)
 
+// For Vercel serverless
+const port = process.env.PORT || 5000
 
-app.listen(port,()=>{
+if (process.env.NODE_ENV === 'production') {
+  module.exports = async (req, res) => {
+    await app(req, res)
+  }
+} else {
+  app.listen(port,()=>{
     connectDb()
     console.log("server started")
-})
+  })
+}
 
