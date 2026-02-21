@@ -13,7 +13,7 @@ const app=express()
 // Update CORS for Vercel deployment
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://your-frontend-url.vercel.app"  // Replace with actual frontend URL
+  "https://your-frontend-url.vercel.app"  // Replace with actual frontend URL from Step 2
 ]
 
 app.use(cors({
