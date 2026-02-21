@@ -10,10 +10,13 @@ import geminiResponse from "./gemini.js"
 
 const app=express()
 
-// Update CORS for Render deployment
+// Update CORS for all origins (development)
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://aivirtualassistant-p0bq.onrender.com"
+  "http://localhost:3000",
+  "http://localhost:4173",
+  "https://*.netlify.app",
+  "https://*.vercel.app"
 ]
 
 app.use(cors({
